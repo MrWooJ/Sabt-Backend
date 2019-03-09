@@ -12,7 +12,8 @@
   },
   "globals": {
     "rootRequire": true,
-    "rootDir": true
+    "rootDir": true,
+    "rootPath": true
   },
   "rules": {
     "no-compare-neg-zero": 2,
