@@ -7,6 +7,7 @@
   },
   "scripts": {
     "lint": "eslint .",
+    "test": "./node_modules/gulp-cli/bin/gulp test",
     "start": "node .",
     "posttest": "npm run lint"
   },
@@ -14,11 +15,17 @@
     "compression": "^1.0.3",
     "cors": "^2.5.2",
     "helmet": "^3.10.0",
+    "http-errors": "^1.6.3",
+    "js-yaml": "^3.12.0",
+    "loopback": "^3.22.0",
     "loopback-boot": "^2.6.5",
-    "serve-favicon": "^2.0.1",
-    "strong-error-handler": "^3.0.0",
     "loopback-component-explorer": "^6.2.0",
-    "loopback": "^3.22.0"
+    "loopback-component-storage": "^3.3.1",
+    "loopback-connector-mongodb": "^3.9.2",
+    "qr": "^0.2.4",
+    "qr-image": "^3.2.0",
+    "serve-favicon": "^2.0.1",
+    "strong-error-handler": "^3.0.0"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
