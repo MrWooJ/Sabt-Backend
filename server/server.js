@@ -17,8 +17,6 @@ app.start = function() {
     app.emit('started');
     let baseUrl = app.get('url').replace(/\/$/, '');
     console.log('Web server listening at: %s', baseUrl);
-    const Network = app.models.network;
-    Network.addIdentity('org1');
     if (app.get('loopback-component-explorer')) {
       let explorerPath = app.get('loopback-component-explorer').mountPath;
       console.log('Browse your REST API at %s%s', baseUrl, explorerPath);
