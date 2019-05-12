@@ -1,0 +1,24 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "mongoDs": {
+    "host": "${MONGO_SABTDB_HOST}",
+    "username": "${MONGO_SABTDB_USERNAME}",
+    "password": "${MONGO_SABTDB_PASSWORD}",
+    "port": "${MONGO_SABTDB_PORT}",
+    "url": "${MONGO_SABTDB_URL}",
+    "database": "${MONGO_SABTDB_DATABASE}",
+    "name": "mongoDs",
+    "maxRows": 99999,
+    "connector": "mongodb"
+  },
+  "ZPSoapDS": {
+    "url": "https://www.zarinpal.com/pg/services/WebGate/service",
+    "name": "ZPSoapDS",
+    "wsdl": "https://www.zarinpal.com/pg/services/WebGate/wsdl",
+    "remotingEnabled": true,
+    "connector": "soap"
+  }
+}
