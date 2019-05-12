@@ -1,1 +1,22 @@
-{}
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "mongoDs": {
+    "host": "localhost",
+    "port": 27017,
+    "url": "",
+    "database": "SabtDB",
+    "name": "mongoDs",
+    "maxRows": 99999,
+    "connector": "mongodb"
+  },
+  "ZPSoapDS": {
+    "url": "https://www.zarinpal.com/pg/services/WebGate/service",
+    "name": "ZPSoapDS",
+    "wsdl": "https://www.zarinpal.com/pg/services/WebGate/wsdl",
+    "remotingEnabled": true,
+    "connector": "soap"
+  }
+}
