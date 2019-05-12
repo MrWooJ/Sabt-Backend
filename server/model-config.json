@@ -35,5 +35,73 @@
   "Role": {
     "dataSource": "mongoDs",
     "public": false
+  },
+  "authentication": {
+    "dataSource": "mongoDs",
+    "public": true
+  },
+  "record": {
+    "dataSource": "mongoDs",
+    "public": true
+  },
+  "license": {
+    "dataSource": null,
+    "public": false
+  },
+  "soap_PaymentGatewayImplementationServiceBinding": {
+    "dataSource": null,
+    "public": true
+  },
+  "PaymentRequest": {
+    "dataSource": null,
+    "public": true
+  },
+  "PaymentRequestResponse": {
+    "dataSource": null,
+    "public": true
+  },
+  "PaymentRequestWithExtra": {
+    "dataSource": null,
+    "public": true
+  },
+  "PaymentRequestWithExtraResponse": {
+    "dataSource": null,
+    "public": true
+  },
+  "PaymentVerification": {
+    "dataSource": null,
+    "public": true
+  },
+  "PaymentVerificationResponse": {
+    "dataSource": null,
+    "public": true
+  },
+  "PaymentVerificationWithExtra": {
+    "dataSource": null,
+    "public": true
+  },
+  "PaymentVerificationWithExtraResponse": {
+    "dataSource": null,
+    "public": true
+  },
+  "GetUnverifiedTransactions": {
+    "dataSource": null,
+    "public": true
+  },
+  "GetUnverifiedTransactionsResponse": {
+    "dataSource": null,
+    "public": true
+  },
+  "RefreshAuthority": {
+    "dataSource": null,
+    "public": true
+  },
+  "RefreshAuthorityResponse": {
+    "dataSource": null,
+    "public": true
+  },
+  "transaction": {
+    "dataSource": "mongoDs",
+    "public": true
   }
 }
