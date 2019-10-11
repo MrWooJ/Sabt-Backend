@@ -1,5 +1,6 @@
 const utility = rootRequire('helper/utility');
-let createError = require('http-errors');
+
+const createError = require('http-errors');
 
 let app = rootRequire('server/server');
 
@@ -13,7 +14,10 @@ module.exports = async Authentication => {
         mobileNumber
       }
     });
-    let rand = utility.generateRandomNumber(125000, 999999);
+    let rand = utility.generateRandomNumber(
+      vars.const.authenticationLowerBracketPin, 
+      vars.const.authenticationUpperBracketPin
+    );
     let time = utility.getUnixTimeStamp();
     let data = {
       mobileNumber,
@@ -21,6 +25,9 @@ module.exports = async Authentication => {
       date: time,
       status: vars.config.verificationStatus.pending
     };
+    if (process.env.NODE_ENV !== vars.config.environmentType.production) {
+      console.log(data);
+    }
     if (authList.length <= 0) {
       let basicModel = await Authentication.create(data);
       await Authentication.sendSMS(mobileNumber, rand);

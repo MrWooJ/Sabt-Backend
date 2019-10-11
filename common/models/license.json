@@ -1,0 +1,32 @@
+{
+  "name": "license",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "status": {
+      "type": "string",
+      "required": true
+    },
+    "isMerkle": {
+      "type": "boolean",
+      "required": true
+    },
+    "merkleIDs": {
+      "type": [
+        "string"
+      ],
+      "required": false
+    },
+    "rootHash": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

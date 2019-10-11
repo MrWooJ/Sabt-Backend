@@ -1,0 +1,26 @@
+{
+  "name": "event",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "transactionHash": {
+      "type": "string",
+      "required": true
+    },
+    "blockNumber": {
+      "type": "number",
+      "required": true
+    },
+    "fileHash": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

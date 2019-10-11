@@ -16,8 +16,9 @@ module.exports = function() {
 		vars.config.blockchainData.development.apiKey;
 	}
 
-	let web3 = new Web3();
-	web3.setProvider(new Web3.providers.HttpProvider(providerUrl));
+  const provider = new Web3.providers.HttpProvider(providerUrl);
+  const web3 = new Web3('http://');
+  web3.setProvider(provider);
 	const privateKey = vars.config.blockchainData.privateKey;
 	const account = web3.eth.accounts.privateKeyToAccount(privateKey);
 	web3.eth.accounts.wallet.add(account);

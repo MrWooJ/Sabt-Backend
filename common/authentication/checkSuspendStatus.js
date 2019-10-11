@@ -1,4 +1,5 @@
 const utility = rootRequire('helper/utility');
+
 let cron = require('cron');
 
 let app = rootRequire('server/server');
@@ -18,7 +19,7 @@ module.exports = async Authentication => {
       let model = authList[i];
       if (Number(model.date) + Number(model.ttl) < time) {
         let data = {
-          tryCount: 5,
+          tryCount: vars.const.authenticationTryCount,
           date: time,
           status: vars.config.verificationStatus.ready
         };

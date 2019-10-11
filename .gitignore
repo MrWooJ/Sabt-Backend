@@ -59,3 +59,4 @@ nohup.out
 *.iml
 
 runScript.sh
+fileStorage

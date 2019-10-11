@@ -1,3 +1,3 @@
 module.exports = {
-  merkleGeneral: 'MerkleGeneral'
+  general: 'MerkleGeneral'
 };

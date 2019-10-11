@@ -45,7 +45,7 @@
     "public": true
   },
   "license": {
-    "dataSource": null,
+    "dataSource": "mongoDs",
     "public": false
   },
   "soap_PaymentGatewayImplementationServiceBinding": {
@@ -102,6 +102,14 @@
   },
   "transaction": {
     "dataSource": "mongoDs",
+    "public": true
+  },
+  "event": {
+    "dataSource": "mongoDs",
+    "public": true
+  },
+  "container": {
+    "dataSource": "fileStorage",
     "public": true
   }
 }

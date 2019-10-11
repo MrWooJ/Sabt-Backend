@@ -1,0 +1,50 @@
+{
+  "name": "record",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "dataHash": {
+      "type": "string",
+      "required": true
+    },
+    "createDate": {
+      "type": "number",
+      "required": true
+    },
+    "updateDate": {
+      "type": "number",
+      "required": true
+    },
+    "status": {
+      "type": "string",
+      "required": true
+    },
+    "clientId": {
+      "type": "string",
+      "required": true
+    },
+    "groupId": {
+      "type": "string",
+      "required": true
+    },
+    "isMerkle": {
+      "type": "boolean",
+      "required": true
+    },
+    "blockNumber": {
+      "type": "number",
+      "required": false
+    },
+    "transactionHash": {
+      "type": "string",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

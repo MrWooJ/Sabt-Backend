@@ -1,5 +1,6 @@
 const utility = rootRequire('helper/utility');
-let createError = require('http-errors');
+
+const createError = require('http-errors');
 
 let app = rootRequire('server/server');
 
@@ -39,7 +40,7 @@ module.exports = async Authentication => {
     let expireDate = Number(model.date) + Number(model.ttl);
     if (time > expireDate) {
       let data = {
-        tryCount: 5,
+        tryCount: vars.const.authenticationTryCount,
         date: time,
         status: vars.config.verificationStatus.ready
       };
@@ -47,7 +48,7 @@ module.exports = async Authentication => {
       throw createError(404);
     }
     if (password !== model.password) {
-      await model.updateAttribute('tryCount', newTryCount);
+      await model.updateAttributes({ tryCount: newTryCount });
       throw createError(401);
     } else {
       let data = {
@@ -55,16 +56,24 @@ module.exports = async Authentication => {
         date: time
       };
       await model.updateAttributes(data);
-
       let User = app.models.User;
       let usersList = await User.find({
         where: { username: mobileNumber.toString() }
       });
       if (usersList.length === 0) {
-        await User.create({
+        let userModel = await User.create({
           username: mobileNumber.toString(),
-          email: mobileNumber.toString() + '@Sabt.com',
+          email: mobileNumber.toString() + vars.const.sabtDomain,
           password: mobileNumber.toString()
+        });
+        let option = {
+          name: userModel.id.toString()
+        };
+        let Container = app.models.container;
+        Container.createContainer(option, err => {
+          if (err) {
+            throw err;
+          }
         });
       }
       let loginResult = await User.login({
@@ -75,7 +84,8 @@ module.exports = async Authentication => {
     }
   };
 
-  Authentication.enterPassword = utility.wrapper(Authentication.enterPassword);
+  Authentication.enterPassword = 
+    utility.wrapper(Authentication.enterPassword);
 
   Authentication.remoteMethod('enterPassword', {
     description: 'Enter the mobile number and provided\

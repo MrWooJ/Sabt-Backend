@@ -16,7 +16,7 @@ module.exports = async hash => {
 			.send({
 				from: web3.eth.defaultAccount,
 				gas: 300000,
-				gasPrice: web3.utils.toWei(vars.config.const.gasPrice, 'gwei')
+				gasPrice: web3.utils.toWei(vars.const.gasPrice, 'gwei')
 			})
 			.on('transactionHash', hash => {
 				resolve(hash);
